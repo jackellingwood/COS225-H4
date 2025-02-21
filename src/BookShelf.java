@@ -5,7 +5,7 @@ public class BookShelf {
     private final ArrayList<Book> _books; // final because vscode said so
 
     public BookShelf(char letter) {
-        _letter = letter;
+        _letter = Character.toLowerCase(letter); // setting letter to lowercase to avoid case confusion
         _books = new ArrayList<>(8);
     }
 
@@ -20,11 +20,11 @@ public class BookShelf {
     }
 
     public void setLetter(char letter) {
-        _letter = letter;
+        _letter = Character.toLowerCase(letter); // setting letter to lowercase to avoid case confusion
     }
 
     public void addBook(Book book) {
-        if (book.toString().charAt(0) == _letter) {
+        if (Character.toLowerCase(book.toString().charAt(0)) == _letter) {
             _books.add(book);
         }
     }
